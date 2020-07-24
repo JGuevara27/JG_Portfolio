@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Josue Guevara"
-  avatar           : "Guevara_foto.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "images/Guevara_foto.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Estudiante de Economía Especializado en Data Science"
   location         : "Lima - Perú"
   email            : "josueguevara291@gmail.com"
