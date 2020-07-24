@@ -93,11 +93,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Josue Guevara"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  bio              : "Estudiante de Economía especializado en Data Science"
+  location         : "Perú"
+  email            : "josueguevara291@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
