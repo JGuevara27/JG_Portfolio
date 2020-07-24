@@ -2,7 +2,7 @@
 layout: single
 title: "About"
 author: "Josue Guevara"
-date: "25 July 2020"
+date: "24 July 2020"
 permalink: /about/
 author_profile: true
 
