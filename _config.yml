@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "Perú"
@@ -20,7 +20,7 @@ title                    : "Proyectos"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Josue Guevara"
-description              : "My portafolio de proyectos"
+description              : "Mi portafolio de proyectos"
 url                      : "https://jguevara27.github.io/JG_Portfolio/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -96,7 +96,7 @@ author:
   name             : "Josue Guevara"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Estudiante de Economía especializado en Data Science"
-  location         : "Perú"
+  location         : "Lima - Perú"
   email            : "josueguevara291@gmail.com"
   links:
     - label: "Email"
