@@ -37,13 +37,11 @@ hidden: true
 
 ```python
 # Import pandas
-# ... YOUR CODE FOR TASK 1 ...
 import pandas as pd
 # Load dataset
 cc_apps = pd.read_csv('datasets/cc_approvals.data', header=None)
 
 # Inspect data
-# ... YOUR CODE FOR TASK 1 ...
 cc_apps.head()
 ```
 
@@ -207,7 +205,6 @@ print(cc_apps_info)
 print("\n")
 
 # Inspect missing values in the dataset
-# ... YOUR CODE FOR TASK 2 ...
 cc_apps.tail()
 ```
 
@@ -401,7 +398,6 @@ cc_apps.tail()
 
 ```python
 # Import numpy
-# ... YOUR CODE FOR TASK 3 ...
 import numpy as np
 # Inspect missing values in the dataset
 print(cc_apps.tail(17))
@@ -410,7 +406,6 @@ print(cc_apps.tail(17))
 cc_apps = cc_apps.replace('?', np.nan)
 
 # Inspect the missing values again
-# ... YOUR CODE FOR TASK 3 ...
 cc_apps.tail(17)
 ```
 
@@ -814,7 +809,6 @@ cc_apps.tail(17)
 cc_apps.fillna(cc_apps.mean(), inplace=True)
 
 # Count the number of NaNs in the dataset to verify
-# ... YOUR CODE FOR TASK 4 ...
 cc_apps.isnull().sum()
 ```
 
@@ -855,7 +849,6 @@ for col in cc_apps:
         cc_apps = cc_apps.fillna(cc_apps[col].value_counts()[0])
 
 # Count the number of NaNs in the dataset and print the counts to verify
-# ... YOUR CODE FOR TASK 5 ...
 cc_apps.isna().sum()
 ```
 
@@ -1013,7 +1006,6 @@ y_pred = logreg.predict(rescaledX_test)
 print("Accuracy of logistic regression classifier: ", logreg.score(rescaledX_test,y_test))
 
 # Print the confusion matrix of the logreg model
-# ... YOUR CODE FOR TASK 10 ...
 confusion_matrix(y_test, y_pred)
 ```
 
