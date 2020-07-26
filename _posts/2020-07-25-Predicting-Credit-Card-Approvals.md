@@ -7,7 +7,7 @@ header:
   overlay_filter: 0.4
   caption: ""
   cta_label: "Switch to Spanish version"
-  cta_url: "https://dashee87.github.io/data%20science/football/r/predicting-football-results-with-statistical-modelling/"
+  cta_url: "https://jguevara27.github.io/JG_Portfolio/finanzas/python/Prediciendo-Solicitudes-de-Tarjetas-de-Cr%C3%A9dito/"
 sidebar:
 
 categories:
@@ -209,7 +209,7 @@ cc_apps.tail()
     75%      7.207500    2.625000    3.00000     395.500000
     max     28.000000   28.500000   67.00000  100000.000000
     
-    
+   
     <class 'pandas.core.frame.DataFrame'>
     RangeIndex: 690 entries, 0 to 689
     Data columns (total 16 columns):
@@ -386,7 +386,6 @@ cc_apps = cc_apps.replace('?', np.nan)
 # Inspect the missing values again
 cc_apps.tail(17)
 ```
-
         0      1       2  3  4   5   6      7  8  9   10 11 12     13   14 15
     673  ?  29.50   2.000  y  p   e   h  2.000  f  f   0  f  g  00256   17  -
     674  a  37.33   2.500  u  g   i   h  0.210  f  f   0  f  g  00260  246  -
@@ -776,10 +775,6 @@ cc_apps.fillna(cc_apps.mean(), inplace=True)
 # Count the number of NaNs in the dataset to verify
 cc_apps.isnull().sum()
 ```
-
-
-
-
     0     12
     1     12
     2      0
@@ -816,9 +811,6 @@ for col in cc_apps:
 # Count the number of NaNs in the dataset and print the counts to verify
 cc_apps.isna().sum()
 ```
-
-
-
 
     0     0
     1     0
@@ -868,7 +860,6 @@ for col in cc_apps.columns.values:
         
 cc_apps.info()
 ```
-
     <class 'pandas.core.frame.DataFrame'>
     RangeIndex: 690 entries, 0 to 689
     Data columns (total 16 columns):
@@ -976,10 +967,6 @@ confusion_matrix(y_test, y_pred)
 
     Accuracy of logistic regression classifier:  0.8377192982456141
     
-
-
-
-
     array([[92, 11],
            [26, 99]])
 
