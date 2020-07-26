@@ -28,7 +28,7 @@ hidden: False
 
 <div align="center"><img src="https://images.unsplash.com/photo-1578670812003-60745e2c2ea9?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt="Credit card being held in hand"></div>
 
-<p>We'll use the <a href="http://archive.ics.uci.edu/ml/datasets/credit+approval">Credit Card Approval dataset</a> from the UCI Machine Learning Repository. The structure of this notebook is as follows:</p>
+<p>We'll use the <a href="http://archive.ics.uci.edu/ml/datasets/credit+approval">Credit Card Approval dataset</a> from the UCI Machine Learning Repository. The structure of this project is as follows:</p>
 <ul>
 <li>First, we will start off by loading and viewing the dataset.</li>
 <li>We will see that the dataset has a mixture of both numerical and non-numerical features, that it contains values from different ranges, plus that it contains a number of missing entries.</li>
