@@ -29,7 +29,7 @@ hidden: False
 <p>Usaremos el <a href="http://archive.ics.uci.edu/ml/datasets/credit+approval">conjunto de datos de <em>Credit Card Approval</em> </a> del repositorio UCI Machine Learning. La estructura del proyecto es el siguiente: </p>
 <ul>
 <li>Primero, iniciaremos cargando y viendo el conjunto de datos.</li>
-<li>Veretmos que el conjunto de datos tiene una mixtura de variables numéricas y no numéricas, que contienen valores de diferentes rangos  y que además contiene un número de dato vacíos.</li>
+<li>Veremos que el conjunto de datos tiene una mixtura de variables numéricas y no numéricas, que contienen valores de diferentes rangos  y que además contiene un número de datos vacíos.</li>
 <li> Tendremos que preprocesar el conjunto de datos para asegurarnos de que el modelo de Machine Learning que escojamos pueda hacer buenas predicciones.</li>
 <li>Después de que nuestros datos estén en buena forma, haremos un análisis exploratorio de datos para construir nuestras intuiciones.</li>
 <li>Finalmente, crearemos un modelo de aprendizaje automático que pueda predecir si se aceptará la solicitud de una persona para una tarjeta de crédito.</li>
@@ -206,7 +206,6 @@ cc_apps.tail()
     50%      2.750000    1.000000    0.00000       5.000000
     75%      7.207500    2.625000    3.00000     395.500000
     max     28.000000   28.500000   67.00000  100000.000000
-    
     
     <class 'pandas.core.frame.DataFrame'>
     RangeIndex: 690 entries, 0 to 689
@@ -914,7 +913,7 @@ X_train, X_test, y_train, y_test = train_test_split(X,
 ```
 
 ## 8. Preprocesando los datos (part II)
-<p> Los datos ahora se dividen en dos conjuntos separados: conjuntos de entrenamiento y prueba, respectivamente. Solo nos queda un paso final que es el escalado previo al procesamiento antes de que podamos ajustar un modelo de aprendizaje automático a los datos. </p>
+<p> Los datos ahora se dividen en dos conjuntos separados: conjuntos de entrenamiento y prueba, respectivamente. Solo nos queda un paso final que es el escalado antes de que podamos aplicar un modelo de aprendizaje automático a los datos. </p>
 <p> Ahora, intentemos comprender qué significan estos valores escalados en el mundo real. Usemos la variable <code> CreditScore </code> como ejemplo. La calificación crediticia de una persona es su solvencia en función de su historial crediticio. Cuanto mayor sea su solvencia, más confiable financieramente se considera que una persona es. Entonces, un <code> CreditScore </code> de 1 es el más alto ya que estamos reescalando todos los valores al rango de 0-1. </p>
 
 
@@ -956,7 +955,7 @@ logreg.fit(rescaledX_train, y_train)
 
 ## 10. Haciendo predicciones y evaluando el rendimiento
 <p> ¿Pero qué tan bien funciona nuestro modelo? </p>
-<p> Ahora evaluaremos nuestro modelo en el conjunto de prueba con la <a href="https://developers.google.com/machine-learning/crash-course/classification/accuracy"> precisión de clasificación </a> . Pero también analizaremos la <a href="http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/"> matriz de confusión </a> del modelo. En el caso de la predicción de solicitudes de tarjetas de crédito, es igualmente importante ver si nuestro modelo de aprendizaje automático puede predecir la aprobación de las solicitudes originalmente fueron denegadas. Si nuestro modelo no funciona bien en este aspecto, entonces podría terminar denegando la solicitud que debería haber sido aprobada. La matriz de confusión nos ayuda a ver el rendimiento de nuestro modelo desde estos aspectos. </p>
+<p> Ahora evaluaremos nuestro modelo en el conjunto de prueba con la <a href="https://developers.google.com/machine-learning/crash-course/classification/accuracy"> precisión de clasificación </a> . Pero también analizaremos la <a href="http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/"> matriz de confusión </a> del modelo. En el caso de la predicción de solicitudes de tarjetas de crédito, es igualmente importante ver si nuestro modelo de aprendizaje automático puede predecir la aprobación de las solicitudes que originalmente fueron denegadas. Si nuestro modelo no funciona bien en este aspecto, entonces podría terminar denegando la solicitud que debería haber sido aprobada. La matriz de confusión nos ayuda a ver el rendimiento de nuestro modelo desde estos aspectos. </p>
 
 
 ```python
@@ -974,10 +973,6 @@ confusion_matrix(y_test, y_pred)
 
     Accuracy of logistic regression classifier:  0.8377192982456141
     
-
-
-
-
     array([[92, 11],
            [26, 99]])
 
