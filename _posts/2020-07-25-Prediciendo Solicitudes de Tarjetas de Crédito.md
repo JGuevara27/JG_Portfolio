@@ -1,6 +1,6 @@
 ---
 title: "Prediciendo Solicitudes de Tarjetas de Crédito"
-excerpt: "Combining the world's most popular sport with everyone's favourite discrete probability distribution, this post predicts football matches using the Poisson distribution."
+excerpt: "Construyendo un modelo de Aprendizaje Automático que prediga las aprobaciones de las solicitudes de las tarjetas de crédito"
 layout: single
 header:
   overlay_image: "https://images.unsplash.com/photo-1430276084627-789fe55a6da0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80"
