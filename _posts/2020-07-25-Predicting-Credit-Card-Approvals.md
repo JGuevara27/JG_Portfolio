@@ -1,5 +1,5 @@
 ---
-title: "Predicting Credit Card Approval"
+title: "Predicting Credit Card Approvals"
 excerpt: "Combining the world's most popular sport with everyone's favourite discrete probability distribution, this post predicts football matches using the Poisson distribution."
 layout: single
 header:
