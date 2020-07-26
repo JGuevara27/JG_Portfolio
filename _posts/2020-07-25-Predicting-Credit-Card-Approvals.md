@@ -1018,3 +1018,5 @@ print("Best: %f using %s" % (best_score, best_params))
 
     Best: 0.850725 using {'tol': 0.01, 'max_iter': 100}
     
+<p> As we see, we finish with an accuracy of 85% and the best parameters for <code> tol </code> and <code> max_iter </code> are 0.01 and 100, respectively </p>
+<p> This is one the many projects that I developed at <a href="https://www.datacamp.com">Datacamp</a> 
