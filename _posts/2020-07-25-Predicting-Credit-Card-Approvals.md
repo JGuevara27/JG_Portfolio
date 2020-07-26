@@ -1,6 +1,6 @@
 ---
 title: "Predicting Credit Card Approvals"
-excerpt: "Building a Machine Learning model that predict the approvals of applications of Credit Cards."
+excerpt: "Building a Machine Learning model that predicts credit card application approvals."
 layout: single
 header:
   overlay_image: "https://images.unsplash.com/photo-1430276084627-789fe55a6da0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80"
