@@ -8,6 +8,8 @@ header:
   caption: ""
   cta_label: "Switch to Spanish version"
   cta_url: "https://dashee87.github.io/data%20science/football/r/predicting-football-results-with-statistical-modelling/"
+sidebar:
+
 categories:
   - finance
   - python
