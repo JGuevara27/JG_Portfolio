@@ -979,7 +979,7 @@ confusion_matrix(y_test, y_pred)
 
 
 ## 11. Grid searching y haciendo que el modelo funcione mejor
-<p> ¡Nuestro modelo es bastante bueno! Es capaz de obtener un puntaje de precisión de casi el 84%. </p>
+<p> ¡Nuestro modelo es bastante bueno! Es capaz de obtener una precisión de casi el 84%. </p>
 <p> Para la matriz de confusión, el primer elemento de la primera fila denota los verdaderos negativos que significan el número de instancias negativas (solicitudes denegadas) predichas por el modelo correctamente. Y el último elemento de la segunda fila de la matriz de confusión denota los verdaderos positivos que significan el número de instancias positivas (solicitudes aprobadas) predichas por el modelo correctamente. </p>
 <p> Veamos si podemos hacerlo mejor. Podemos realizar un <a href="https://machinelearningmastery.com/how-to-tune-algorithm-parameters-with-scikit-learn/"> Grid searching </a> de los parámetros del modelo para mejorar su capacidad de predecir aprobaciones de tarjetas de crédito. </p>
 <p> <a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html"> La implementación de regresión logística de scikit-learn </a> consta de diferentes hiperparámetros, pero nosotros buscaremos en el Grid Search los dos siguientes: </p>
@@ -1002,9 +1002,9 @@ param_grid = dict(tol=tol, max_iter=max_iter)
 
 ## 12. Encontrando el modelo con el mejor rendimiento
 <p> Hemos definido la matriz de valores de hiperparámetros y los hemos convertido a un único formato de diccionario que <code> GridSearchCV () </code> espera como uno de sus parámetros. Ahora, comenzaremos la búsqueda en la matriz para ver qué valores funcionan mejor. </p>
-<p> Aplicaremos <code> GridSearchCV () </code> con nuestro modelo anterior <code> logreg </code> con todos los datos que tenemos. En lugar de pasar el entrenamiento y el conjunto de prueba por separado, suministraremos <code> X </code> (versión a escala) y <code> y </code>. También le indicaremos a <code> GridSearchCV () </code> que realice una <a href="https://www.dataschool.io/machine-learning-with-scikit-learn/"> validación cruzada </a> de cinco instancias. </p>
+<p> Aplicaremos <code> GridSearchCV () </code> con nuestro modelo anterior <code> logreg </code> con todos los datos que tenemos. En lugar de pasar el entrenamiento y el conjunto de prueba por separado, suministraremos <code> X </code> (versión a escala) y la variable explicada <code> y </code>. También le indicaremos a <code> GridSearchCV () </code> que realice una <a href="https://www.dataschool.io/machine-learning-with-scikit-learn/"> validación cruzada </a> de cinco instancias. </p>
 <p> Terminaremos el proyecto almacenando el puntaje mejor logrado y los mejores parámetros respectivos. </p>
-<p> Al construir este predictor de tarjeta de crédito, abordamos algunos de los pasos de preprocesamiento más conocidos, como <strong> scaling </strong>, <strong> label encoding </strong> y <strong> missing value imputation </strong>. Terminamos con algo de <strong> aprendizaje automático </strong> para predecir si la solicitud de una tarjeta de crédito de una persona sería aprobada o no dado la información sobre esa persona. </p>
+<p> Al construir este predictor de tarjeta de crédito, abordamos algunos de los pasos de preprocesamiento más conocidos, como <strong> scaling </strong>, <strong> label encoding </strong> y <strong> missing value imputation </strong>. Terminamos con algo de <strong> aprendizaje automático </strong> para predecir si la solicitud de una tarjeta de crédito de una persona sería aprobada o no dado la información sobre esa persona.</p> 
 
 
 ```python
@@ -1024,3 +1024,4 @@ print("Best: %f using %s" % (best_score, best_params))
 
     Best: 0.850725 using {'tol': 0.01, 'max_iter': 100}
     
+<p>Como vemos, terminamos con una precisión del 85% y que los mejores parámetros para <code>tol</code> y <code>max_iter</code> son 0.01 y 100, respectivamente</p>
