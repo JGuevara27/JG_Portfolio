@@ -17,7 +17,7 @@ tags:
   - python
 author: "Josue Guevara"
 date: "25 July 2020"
-hidden: true
+hidden: False
 ---
 
 
