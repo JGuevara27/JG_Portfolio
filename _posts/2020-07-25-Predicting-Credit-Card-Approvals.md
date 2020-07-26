@@ -3,7 +3,7 @@ title: "Predicting Credit Card Approval"
 excerpt: "Combining the world's most popular sport with everyone's favourite discrete probability distribution, this post predicts football matches using the Poisson distribution."
 layout: single
 header:
-  overlay_image: https://images.unsplash.com/photo-1430276084627-789fe55a6da0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80
+  overlay_image: "https://images.unsplash.com/photo-1430276084627-789fe55a6da0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80"
   overlay_filter: 0.4
   caption: ""
   cta_label: "Switch to Spanish version"
