@@ -39,7 +39,7 @@ hidden: true
 # Import pandas
 import pandas as pd
 # Load dataset
-cc_apps = pd.read_csv('datasets/cc_approvals.data', header=None)
+cc_apps = pd.read_csv("http://archive.ics.uci.edu/ml/machine-learning-databases/credit-screening/crx.data", header=None)
 
 # Inspect data
 cc_apps.head()
