@@ -1,5 +1,5 @@
 ---
-layout: pages
+layout: single
 title: "About me/Sobre mí"
 author: "Josue Guevara"
 date: "24 July 2020"
