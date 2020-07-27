@@ -2,7 +2,6 @@
 layout: single
 title: "About me/Sobre mí"
 author: "Josue Guevara"
-author_profile: true
 date: "24 July 2020"
 permalink: /about/
 
