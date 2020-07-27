@@ -22,11 +22,11 @@ hidden: False
 
 
 ## 1. Solicitudes de Tarjetas de Crédito
-<p align="center">Los bancos comerciales reciben <em>muchísimas</em> solicitudes de tarjetas de crédito. Muchos de ellos son rechazados por diversas razones tales como altos saldos de préstamo, bajos niveles de ingresos, o tantas consultas sobre el informe de crédito de un individuo (solicitudes). Analizar manualmente estas solicitudes es mundano, propenso a errores y requiere mucho tiempo (y el tiempo es dinero!). Por suerte, esta tarea puede ser automatizada con el poder del aprendizaje automatico y casi todos los bancos comerciales lo hacen hoy en día. En este proyecto, construiremos un predictor automatizado de aprobación de tarjetas de crédito usando técnicas de Machine Learning, tal como los bancos reales lo hacen.</p>
+<p align="justify">Los bancos comerciales reciben <em>muchísimas</em> solicitudes de tarjetas de crédito. Muchos de ellos son rechazados por diversas razones tales como altos saldos de préstamo, bajos niveles de ingresos, o tantas consultas sobre el informe de crédito de un individuo (solicitudes). Analizar manualmente estas solicitudes es mundano, propenso a errores y requiere mucho tiempo (y el tiempo es dinero!). Por suerte, esta tarea puede ser automatizada con el poder del aprendizaje automatico y casi todos los bancos comerciales lo hacen hoy en día. En este proyecto, construiremos un predictor automatizado de aprobación de tarjetas de crédito usando técnicas de Machine Learning, tal como los bancos reales lo hacen.</p>
 
 <div align="center"><img src="https://images.unsplash.com/photo-1578670812003-60745e2c2ea9?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt="Credit card being held in hand"></div>
 
-<p align="center">Usaremos el <a href="http://archive.ics.uci.edu/ml/datasets/credit+approval">conjunto de datos de <em>Credit Card Approval</em> </a> del repositorio UCI Machine Learning. La estructura del proyecto es el siguiente: </p>
+<p align="justify">Usaremos el <a href="http://archive.ics.uci.edu/ml/datasets/credit+approval">conjunto de datos de <em>Credit Card Approval</em> </a> del repositorio UCI Machine Learning. La estructura del proyecto es el siguiente: </p>
 <ul>
 <li>Primero, iniciaremos cargando y viendo el conjunto de datos.</li>
 <li>Veremos que el conjunto de datos tiene una mixtura de variables numéricas y no numéricas, que contienen valores de diferentes rangos  y que además contiene un número de datos vacíos.</li>
@@ -34,7 +34,7 @@ hidden: False
 <li>Después de que nuestros datos estén en buena forma, haremos un análisis exploratorio de datos para construir nuestras intuiciones.</li>
 <li>Finalmente, crearemos un modelo de aprendizaje automático que pueda predecir si se aceptará la solicitud de una persona para una tarjeta de crédito.</li>
 </ul>
-<p align="center">Primero, cargamos y vemos el conjunto de datos. Descubriremos que el contribuyente del conjunto de datos ha anonimizado los nombres de las variables puesto que estos datos son confidencionales</p>
+<p align="justify">Primero, cargamos y vemos el conjunto de datos. Descubriremos que el contribuyente del conjunto de datos ha anonimizado los nombres de las variables puesto que estos datos son confidencionales</p>
 
 
 ```python
