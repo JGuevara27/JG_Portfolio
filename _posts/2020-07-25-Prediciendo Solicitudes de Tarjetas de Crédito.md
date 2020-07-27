@@ -176,8 +176,8 @@ cc_apps.head()
 
 
 ## 2. Analizando las solicitudes
-<p>El output puede parecer un poco confuso a primera vista, pero intentemos encontrar las variables más importantes de las solicitudes de tarjetas de crédito. Las variables han sido anonimizadas para proteger la privacidad, pero <a href="http://rstudio-pubs-static.s3.amazonaws.com/73039_9946de135c0a49daa7a0a9eda4a67a72.html">este blog</a> nos da una muy buena aproximación de las probables variables. Las variables en una solicitud de tarjeta de crédito podrían ser <code>Gender</code>, <code>Age</code>, <code>Debt</code>, <code>Married</code>, <code>BankCustomer</code>, <code>EducationLevel</code>, <code>Ethnicity</code>, <code>YearsEmployed</code>, <code>PriorDefault</code>, <code>Employed</code>, <code>CreditScore</code>, <code>DriversLicense</code>, <code>Citizen</code>, <code>ZipCode</code>, <code>Income</code> y finalmente <code>ApprovalStatus</code>. Esto nos da un muy buen punto de inicio, y podemos podemos relacionar estas variables con respecto a las columnas en el output.   </p>
-<p> Como podemos ver desde nuestro primer vistazo a los datos, el conjunto de datos tiene una combinación de características numéricas y no numéricas. Esto se puede solucionar con algo de preprocesamiento, pero antes de hacerlo, aprendamos un poco más sobre el conjunto de datos para ver si hay otros problemas del conjunto de datos que deben corregirse.</p>
+<p align="justify">El output puede parecer un poco confuso a primera vista, pero intentemos encontrar las variables más importantes de las solicitudes de tarjetas de crédito. Las variables han sido anonimizadas para proteger la privacidad, pero <a href="http://rstudio-pubs-static.s3.amazonaws.com/73039_9946de135c0a49daa7a0a9eda4a67a72.html">este blog</a> nos da una muy buena aproximación de las probables variables. Las variables en una solicitud de tarjeta de crédito podrían ser <code>Gender</code>, <code>Age</code>, <code>Debt</code>, <code>Married</code>, <code>BankCustomer</code>, <code>EducationLevel</code>, <code>Ethnicity</code>, <code>YearsEmployed</code>, <code>PriorDefault</code>, <code>Employed</code>, <code>CreditScore</code>, <code>DriversLicense</code>, <code>Citizen</code>, <code>ZipCode</code>, <code>Income</code> y finalmente <code>ApprovalStatus</code>. Esto nos da un muy buen punto de inicio, y podemos podemos relacionar estas variables con respecto a las columnas en el output.   </p>
+<p align="justify"> Como podemos ver desde nuestro primer vistazo a los datos, el conjunto de datos tiene una combinación de características numéricas y no numéricas. Esto se puede solucionar con algo de preprocesamiento, pero antes de hacerlo, aprendamos un poco más sobre el conjunto de datos para ver si hay otros problemas del conjunto de datos que deben corregirse.</p>
 
 
 ```python
@@ -362,13 +362,13 @@ cc_apps.tail()
 
 
 ## 3. Manejando los datos vacíos (part I)
-<p>Hemos descubierto algunos problemas que afectarán el rendimiento de nuestros modelos de aprendizaje automático si no cambian:</p>
+<p align="justify">Hemos descubierto algunos problemas que afectarán el rendimiento de nuestros modelos de aprendizaje automático si no cambian:</p>
 <ul>
 <li>Nuestro conjunto de datos contiene datos numéricos y no numéricos (específicamente datos que son <code>float64</code>, <code>int64</code> y <code>object</code> types). Específicamente, las columnass 2, 7, 10 y 14 contienen valores numéricos (de tipos float64, float64, int64 y int64 respectivamente) y todas las otras columnas contienen valores no-numéricos.</li>
 <li>El conjunto de datos también contiene valores de varios rangos. Algunas columnas tienen un rango de valores de 0 a 28, algunas tienen un rango de 2 a 67 y otras tienen un rango de 1017 a 100000. Aparte de estas, podemos obtener información estadística útil (como <code>mean</code>, <code>max</code>, y <code>min</code>) sobre las características que tienen valores numéricos. </li>
 <li> Finalmente, el conjunto de datos tiene valores faltantes, de los cuales nos ocuparemos en esta tarea. Los valores que faltan en el conjunto de datos están etiquetados con '?', Que se puede ver en la salida de la última celda. </li>
 </ul>
-<p>Ahora, reemplacemos temporalmente estos signos de interrogación de valor perdido con NaN.</p>
+<p align="justify">Ahora, reemplacemos temporalmente estos signos de interrogación de valor perdido con NaN.</p>
 
 
 ```python
@@ -761,9 +761,9 @@ cc_apps.tail(17)
 
 
 ## 4.  Manejando los datos vacíos (part II)
-<p> Reemplazamos todos los signos de interrogación con NaNs. Esto nos ayudará en el próximo tratamiento de los valores perdidos que vamos a realizar. </p>
-<p> Una pregunta importante que surge aquí es <em> ¿por qué le damos tanta importancia a los valores perdidos </em>? ¿No pueden ser ignorados? Ignorar los valores perdidos puede afectar en gran medida el rendimiento de un modelo de aprendizaje automático. Si ignoramos los valores faltantes, nuestro modelo de aprendizaje automático puede perder información sobre el conjunto de datos que puede ser útil para su capacitación. </p>
-<p> Entonces, para evitar este problema, vamos a imputar los valores faltantes con una estrategia llamada imputación media. </p>
+<p align="justify"> Reemplazamos todos los signos de interrogación con NaNs. Esto nos ayudará en el próximo tratamiento de los valores perdidos que vamos a realizar. </p>
+<p align="justify"> Una pregunta importante que surge aquí es <em> ¿por qué le damos tanta importancia a los valores perdidos </em>? ¿No pueden ser ignorados? Ignorar los valores perdidos puede afectar en gran medida el rendimiento de un modelo de aprendizaje automático. Si ignoramos los valores faltantes, nuestro modelo de aprendizaje automático puede perder información sobre el conjunto de datos que puede ser útil para su capacitación. </p>
+<p align="justify"> Entonces, para evitar este problema, vamos a imputar los valores faltantes con una estrategia llamada imputación media. </p>
 
 
 ```python
@@ -798,8 +798,8 @@ cc_apps.isnull().sum()
 
 
 ## 5.  Manejando los datos vacíos (part III)
-<p> Nos hemos ocupado con éxito de los valores perdidos que están en las columnas numéricas. Todavía hay algunos datos vacíos para ser imputados en las columnas 0, 1, 3, 4, 5, 6 y 13. Todas estas columnas contienen datos no numéricos y es por eso que la estrategia de imputación media no funcionaría aquí. Esto necesita un tratamiento diferente. </p>
-<p> Vamos a imputar estos valores perdidos con los valores más frecuentes que están presentes en las columnas respectivas. Esto es <a href="https://www.datacamp.com/community/tutorials/categorical-data"> una buena práctica</a> cuando se trata de imputar valores perdidos para datos categóricos en general. </p>
+<p align="justify"> Nos hemos ocupado con éxito de los valores perdidos que están en las columnas numéricas. Todavía hay algunos datos vacíos para ser imputados en las columnas 0, 1, 3, 4, 5, 6 y 13. Todas estas columnas contienen datos no numéricos y es por eso que la estrategia de imputación media no funcionaría aquí. Esto necesita un tratamiento diferente. </p>
+<p align="justify"> Vamos a imputar estos valores perdidos con los valores más frecuentes que están presentes en las columnas respectivas. Esto es <a href="https://www.datacamp.com/community/tutorials/categorical-data"> una buena práctica</a> cuando se trata de imputar valores perdidos para datos categóricos en general. </p>
 
 
 ```python
@@ -838,14 +838,14 @@ cc_apps.isna().sum()
 
 
 ## 6. Preprocesando los datos (part I)
-<p> Los valores perdidos ahora son manejados con éxito. </p>
-<p> Todavía es necesario un preprocesamiento de datos menor pero esencial antes de proceder a construir nuestro modelo de aprendizaje automático. Vamos a dividir estos pasos de preprocesamiento restantes en tres tareas principales: </p>
+<p align="justify"> Los valores perdidos ahora son manejados con éxito. </p>
+<p align="justify"> Todavía es necesario un preprocesamiento de datos menor pero esencial antes de proceder a construir nuestro modelo de aprendizaje automático. Vamos a dividir estos pasos de preprocesamiento restantes en tres tareas principales: </p>
 <ol>
 <li> Convertir los datos no numéricos en numéricos. </li>
 <li> Dividir los datos en dos conjuntos de entrenamiento y prueba. </li>
 <li> Escalar los valores de la característica a un rango uniforme. </li>
 </ol>
-<p> Primero, convertiremos todos los valores no numéricos en valores numéricos. Hacemos esto porque no solo da como resultado un cálculo más rápido, sino que también muchos modelos de aprendizaje automático (como XGBoost) (y especialmente los que son desarrollados usando scikit-learn) requieren que los datos estén en un formato estrictamente numérico. Lo haremos utilizando una técnica llamada <a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html"> <em>label encoding</em> </a>. </p>
+<p align="justify"> Primero, convertiremos todos los valores no numéricos en valores numéricos. Hacemos esto porque no solo da como resultado un cálculo más rápido, sino que también muchos modelos de aprendizaje automático (como XGBoost) (y especialmente los que son desarrollados usando scikit-learn) requieren que los datos estén en un formato estrictamente numérico. Lo haremos utilizando una técnica llamada <a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html"> <em>label encoding</em> </a>. </p>
 
 
 ```python
@@ -890,9 +890,9 @@ cc_apps.info()
     
 
 ## 7. Separando el conjunto de datos en dos: entrenamiento y prueba
-<p> Hemos convertido con éxito todos los valores no numéricos en valores numéricos. </p>
-<p> Ahora, dividiremos nuestros datos en un conjunto de entrenamiento y un conjunto de prueba para preparar nuestros datos para dos fases diferentes de modelado de aprendizaje automático: capacitación y pruebas. Idealmente, ninguna información de los datos de la prueba debería usarse para escalar los datos de entrenamiento o para dirigir el proceso de entrenamiento de un modelo de aprendizaje automático. Por lo tanto, primero dividimos los datos y luego aplicamos la escala. </p>
-<p> Además, características como <code> DriversLicense </code> y <code> ZipCode </code> no son tan importantes como las otras características del conjunto de datos para predecir las aprobaciones de tarjetas de crédito. No deberíamos considerarlos para diseñar nuestro modelo de aprendizaje automático con el mejor conjunto de variables. En la literatura de Data Science, esto a menudo se conoce como <em> feature selection </em>. </p>
+<p align="justify"> Hemos convertido con éxito todos los valores no numéricos en valores numéricos. </p>
+<p align="justify"> Ahora, dividiremos nuestros datos en un conjunto de entrenamiento y un conjunto de prueba para preparar nuestros datos para dos fases diferentes de modelado de aprendizaje automático: capacitación y pruebas. Idealmente, ninguna información de los datos de la prueba debería usarse para escalar los datos de entrenamiento o para dirigir el proceso de entrenamiento de un modelo de aprendizaje automático. Por lo tanto, primero dividimos los datos y luego aplicamos la escala. </p>
+<p align="justify"> Además, características como <code> DriversLicense </code> y <code> ZipCode </code> no son tan importantes como las otras características del conjunto de datos para predecir las aprobaciones de tarjetas de crédito. No deberíamos considerarlos para diseñar nuestro modelo de aprendizaje automático con el mejor conjunto de variables. En la literatura de Data Science, esto a menudo se conoce como <em> feature selection </em>. </p>
 
 
 ```python
@@ -913,8 +913,8 @@ X_train, X_test, y_train, y_test = train_test_split(X,
 ```
 
 ## 8. Preprocesando los datos (part II)
-<p> Los datos ahora se dividen en dos conjuntos separados: conjuntos de entrenamiento y prueba, respectivamente. Solo nos queda un paso final que es el escalado antes de que podamos aplicar un modelo de aprendizaje automático a los datos. </p>
-<p> Ahora, intentemos comprender qué significan estos valores escalados en el mundo real. Usemos la variable <code> CreditScore </code> como ejemplo. La calificación crediticia de una persona es su solvencia en función de su historial crediticio. Cuanto mayor sea su solvencia, más confiable financieramente se considera que una persona es. Entonces, un <code> CreditScore </code> de 1 es el más alto ya que estamos reescalando todos los valores al rango de 0-1. </p>
+<p align="justify"> Los datos ahora se dividen en dos conjuntos separados: conjuntos de entrenamiento y prueba, respectivamente. Solo nos queda un paso final que es el escalado antes de que podamos aplicar un modelo de aprendizaje automático a los datos. </p>
+<p align="justify"> Ahora, intentemos comprender qué significan estos valores escalados en el mundo real. Usemos la variable <code> CreditScore </code> como ejemplo. La calificación crediticia de una persona es su solvencia en función de su historial crediticio. Cuanto mayor sea su solvencia, más confiable financieramente se considera que una persona es. Entonces, un <code> CreditScore </code> de 1 es el más alto ya que estamos reescalando todos los valores al rango de 0-1. </p>
 
 
 ```python
@@ -927,9 +927,9 @@ rescaledX_test = scaler.fit_transform(X_test)
 ```
 
 ## 9. Ajustando un modelo de regresión logística al conjunto de entrenamiento.
-<p> Esencialmente, predecir si una solicitud de tarjeta de crédito será aprobada o no es una tarea <a href="https://en.wikipedia.org/wiki/Statistical_classification">  de clasificación </a>. <a href="http://archive.ics.uci.edu/ml/machine-learning-databases/credit-screening/crx.names"> Según el UCI </a>, nuestro conjunto de datos contiene más instancias que corresponden al estado "Denegado" que las instancias correspondientes al estado "Aprobado". Específicamente, de 690 instancias, hay 383 (55.5%) solicitudes que fueron rechazadas y 307 (44.5%) solicitudes que fueron aprobadas. </p>
-<p> Esto nos da un punto de referencia. Un buen modelo de aprendizaje automático debería poder predecir con precisión el estado de las solicitudes con respecto a estas estadísticas. </p>
-<p> ¿Qué modelo debemos elegir? Una pregunta que debe hacerse es: <em> ¿Las variables que afectan el proceso de decisión de aprobación de la tarjeta de crédito están correlacionadas entre sí? </em> Aunque podemos medir la correlación, eso está fuera del alcance de este proyecto, por lo que confiaremos en nuestra intuición de que de hecho están correlacionadas por ahora. Debido a esta correlación, aprovecharemos el hecho de que los modelos lineales generalizados funcionan bien en estos casos. Comencemos nuestro proceso de modelación de aprendizaje automático con un modelo de Regresión Logística (un modelo lineal generalizado). </p>
+<p align="justify"> Esencialmente, predecir si una solicitud de tarjeta de crédito será aprobada o no es una tarea <a href="https://en.wikipedia.org/wiki/Statistical_classification">  de clasificación </a>. <a href="http://archive.ics.uci.edu/ml/machine-learning-databases/credit-screening/crx.names"> Según el UCI </a>, nuestro conjunto de datos contiene más instancias que corresponden al estado "Denegado" que las instancias correspondientes al estado "Aprobado". Específicamente, de 690 instancias, hay 383 (55.5%) solicitudes que fueron rechazadas y 307 (44.5%) solicitudes que fueron aprobadas. </p>
+<p align="justify"> Esto nos da un punto de referencia. Un buen modelo de aprendizaje automático debería poder predecir con precisión el estado de las solicitudes con respecto a estas estadísticas. </p>
+<p align="justify"> ¿Qué modelo debemos elegir? Una pregunta que debe hacerse es: <em> ¿Las variables que afectan el proceso de decisión de aprobación de la tarjeta de crédito están correlacionadas entre sí? </em> Aunque podemos medir la correlación, eso está fuera del alcance de este proyecto, por lo que confiaremos en nuestra intuición de que de hecho están correlacionadas por ahora. Debido a esta correlación, aprovecharemos el hecho de que los modelos lineales generalizados funcionan bien en estos casos. Comencemos nuestro proceso de modelación de aprendizaje automático con un modelo de Regresión Logística (un modelo lineal generalizado). </p>
 
 
 ```python
@@ -954,8 +954,8 @@ logreg.fit(rescaledX_train, y_train)
 
 
 ## 10. Haciendo predicciones y evaluando el rendimiento
-<p> ¿Pero qué tan bien funciona nuestro modelo? </p>
-<p> Ahora evaluaremos nuestro modelo en el conjunto de prueba con la <a href="https://developers.google.com/machine-learning/crash-course/classification/accuracy"> precisión de clasificación </a> . Pero también analizaremos la <a href="http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/"> matriz de confusión </a> del modelo. En el caso de la predicción de solicitudes de tarjetas de crédito, es igualmente importante ver si nuestro modelo de aprendizaje automático puede predecir la aprobación de las solicitudes que originalmente fueron denegadas. Si nuestro modelo no funciona bien en este aspecto, entonces podría terminar denegando la solicitud que debería haber sido aprobada. La matriz de confusión nos ayuda a ver el rendimiento de nuestro modelo desde estos aspectos. </p>
+<p align="justify"> ¿Pero qué tan bien funciona nuestro modelo? </p>
+<p align="justify"> Ahora evaluaremos nuestro modelo en el conjunto de prueba con la <a href="https://developers.google.com/machine-learning/crash-course/classification/accuracy"> precisión de clasificación </a> . Pero también analizaremos la <a href="http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/"> matriz de confusión </a> del modelo. En el caso de la predicción de solicitudes de tarjetas de crédito, es igualmente importante ver si nuestro modelo de aprendizaje automático puede predecir la aprobación de las solicitudes que originalmente fueron denegadas. Si nuestro modelo no funciona bien en este aspecto, entonces podría terminar denegando la solicitud que debería haber sido aprobada. La matriz de confusión nos ayuda a ver el rendimiento de nuestro modelo desde estos aspectos. </p>
 
 
 ```python
@@ -979,10 +979,10 @@ confusion_matrix(y_test, y_pred)
 
 
 ## 11. Grid searching y haciendo que el modelo funcione mejor
-<p> ¡Nuestro modelo es bastante bueno! Es capaz de obtener una precisión de casi el 84%. </p>
-<p> Para la matriz de confusión, el primer elemento de la primera fila denota los verdaderos negativos que significan el número de instancias negativas (solicitudes denegadas) predichas por el modelo correctamente. Y el último elemento de la segunda fila de la matriz de confusión denota los verdaderos positivos que significan el número de instancias positivas (solicitudes aprobadas) predichas por el modelo correctamente. </p>
-<p> Veamos si podemos hacerlo mejor. Podemos realizar un <a href="https://machinelearningmastery.com/how-to-tune-algorithm-parameters-with-scikit-learn/"> Grid searching </a> de los parámetros del modelo para mejorar su capacidad de predecir aprobaciones de tarjetas de crédito. </p>
-<p> <a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html"> La implementación de regresión logística de scikit-learn </a> consta de diferentes hiperparámetros, pero nosotros buscaremos en el Grid Search los dos siguientes: </p>
+<p align="justify"> ¡Nuestro modelo es bastante bueno! Es capaz de obtener una precisión de casi el 84%. </p>
+<p align="justify"> Para la matriz de confusión, el primer elemento de la primera fila denota los verdaderos negativos que significan el número de instancias negativas (solicitudes denegadas) predichas por el modelo correctamente. Y el último elemento de la segunda fila de la matriz de confusión denota los verdaderos positivos que significan el número de instancias positivas (solicitudes aprobadas) predichas por el modelo correctamente. </p>
+<p align="justify"> Veamos si podemos hacerlo mejor. Podemos realizar un <a href="https://machinelearningmastery.com/how-to-tune-algorithm-parameters-with-scikit-learn/"> Grid searching </a> de los parámetros del modelo para mejorar su capacidad de predecir aprobaciones de tarjetas de crédito. </p>
+<p align="justify"> <a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html"> La implementación de regresión logística de scikit-learn </a> consta de diferentes hiperparámetros, pero nosotros buscaremos en el Grid Search los dos siguientes: </p>
 <ul>
 <li>tol</li>
 <li>max_iter</li>
@@ -1001,10 +1001,10 @@ param_grid = dict(tol=tol, max_iter=max_iter)
 ```
 
 ## 12. Encontrando el modelo con el mejor rendimiento
-<p> Hemos definido la matriz de valores de hiperparámetros y los hemos convertido a un único formato de diccionario que <code> GridSearchCV () </code> espera como uno de sus parámetros. Ahora, comenzaremos la búsqueda en la matriz para ver qué valores funcionan mejor. </p>
-<p> Aplicaremos <code> GridSearchCV () </code> con nuestro modelo anterior <code> logreg </code> con todos los datos que tenemos. En lugar de pasar el entrenamiento y el conjunto de prueba por separado, suministraremos <code> X </code> (versión a escala) y la variable explicada <code> y </code>. También le indicaremos a <code> GridSearchCV () </code> que realice una <a href="https://www.dataschool.io/machine-learning-with-scikit-learn/"> validación cruzada </a> de cinco instancias. </p>
-<p> Terminaremos el proyecto almacenando el puntaje mejor logrado y los mejores parámetros respectivos. </p>
-<p> Al construir este predictor de tarjeta de crédito, abordamos algunos de los pasos de preprocesamiento más conocidos, como <strong> scaling </strong>, <strong> label encoding </strong> y <strong> missing value imputation </strong>. Terminamos con algo de <strong> aprendizaje automático </strong> para predecir si la solicitud de una tarjeta de crédito de una persona sería aprobada o no dado la información sobre esa persona.</p> 
+<p align="justify"> Hemos definido la matriz de valores de hiperparámetros y los hemos convertido a un único formato de diccionario que <code> GridSearchCV () </code> espera como uno de sus parámetros. Ahora, comenzaremos la búsqueda en la matriz para ver qué valores funcionan mejor. </p>
+<p align="justify"> Aplicaremos <code> GridSearchCV () </code> con nuestro modelo anterior <code> logreg </code> con todos los datos que tenemos. En lugar de pasar el entrenamiento y el conjunto de prueba por separado, suministraremos <code> X </code> (versión a escala) y la variable explicada <code> y </code>. También le indicaremos a <code> GridSearchCV () </code> que realice una <a href="https://www.dataschool.io/machine-learning-with-scikit-learn/"> validación cruzada </a> de cinco instancias. </p>
+<p align="justify"> Terminaremos el proyecto almacenando el puntaje mejor logrado y los mejores parámetros respectivos. </p>
+<p align="justify"> Al construir este predictor de tarjeta de crédito, abordamos algunos de los pasos de preprocesamiento más conocidos, como <strong> scaling </strong>, <strong> label encoding </strong> y <strong> missing value imputation </strong>. Terminamos con algo de <strong> aprendizaje automático </strong> para predecir si la solicitud de una tarjeta de crédito de una persona sería aprobada o no dado la información sobre esa persona.</p> 
 
 
 ```python
@@ -1024,4 +1024,4 @@ print("Best: %f using %s" % (best_score, best_params))
 
     Best: 0.850725 using {'tol': 0.01, 'max_iter': 100}
     
-<p>Como vemos, terminamos con una precisión del 85% y que los mejores parámetros para <code>tol</code> y <code>max_iter</code> son 0.01 y 100, respectivamente</p>
+<p align="justify">Como vemos, terminamos con una precisión del 85% y que los mejores parámetros para <code>tol</code> y <code>max_iter</code> son 0.01 y 100, respectivamente</p>
