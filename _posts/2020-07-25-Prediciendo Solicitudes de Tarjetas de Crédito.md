@@ -22,11 +22,11 @@ hidden: False
 
 
 ## 1. Solicitudes de Tarjetas de Crédito
-<p>Los bancos comerciales reciben <em>muchísimas</em> solicitudes de tarjetas de crédito. Muchos de ellos son rechazados por diversas razones tales como altos saldos de préstamo, bajos niveles de ingresos, o tantas consultas sobre el informe de crédito de un individuo (solicitudes). Analizar manualmente estas solicitudes es mundano, propenso a errores y requiere mucho tiempo (y el tiempo es dinero!). Por suerte, esta tarea puede ser automatizada con el poder del aprendizaje automatico y casi todos los bancos comerciales lo hacen hoy en día. En este proyecto, construiremos un predictor automatizado de aprobación de tarjetas de crédito usando técnicas de Machine Learning, tal como los bancos reales lo hacen.</p>
+<p align="center">Los bancos comerciales reciben <em>muchísimas</em> solicitudes de tarjetas de crédito. Muchos de ellos son rechazados por diversas razones tales como altos saldos de préstamo, bajos niveles de ingresos, o tantas consultas sobre el informe de crédito de un individuo (solicitudes). Analizar manualmente estas solicitudes es mundano, propenso a errores y requiere mucho tiempo (y el tiempo es dinero!). Por suerte, esta tarea puede ser automatizada con el poder del aprendizaje automatico y casi todos los bancos comerciales lo hacen hoy en día. En este proyecto, construiremos un predictor automatizado de aprobación de tarjetas de crédito usando técnicas de Machine Learning, tal como los bancos reales lo hacen.</p>
 
 <div align="center"><img src="https://images.unsplash.com/photo-1578670812003-60745e2c2ea9?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt="Credit card being held in hand"></div>
 
-<p>Usaremos el <a href="http://archive.ics.uci.edu/ml/datasets/credit+approval">conjunto de datos de <em>Credit Card Approval</em> </a> del repositorio UCI Machine Learning. La estructura del proyecto es el siguiente: </p>
+<p align="center">Usaremos el <a href="http://archive.ics.uci.edu/ml/datasets/credit+approval">conjunto de datos de <em>Credit Card Approval</em> </a> del repositorio UCI Machine Learning. La estructura del proyecto es el siguiente: </p>
 <ul>
 <li>Primero, iniciaremos cargando y viendo el conjunto de datos.</li>
 <li>Veremos que el conjunto de datos tiene una mixtura de variables numéricas y no numéricas, que contienen valores de diferentes rangos  y que además contiene un número de datos vacíos.</li>
@@ -34,7 +34,7 @@ hidden: False
 <li>Después de que nuestros datos estén en buena forma, haremos un análisis exploratorio de datos para construir nuestras intuiciones.</li>
 <li>Finalmente, crearemos un modelo de aprendizaje automático que pueda predecir si se aceptará la solicitud de una persona para una tarjeta de crédito.</li>
 </ul>
-<p>Primero, cargamos y vemos el conjunto de datos. Descubriremos que el contribuyente del conjunto de datos ha anonimizado los nombres de las variables puesto que estos datos son confidencionales</p>
+<p align="center">Primero, cargamos y vemos el conjunto de datos. Descubriremos que el contribuyente del conjunto de datos ha anonimizado los nombres de las variables puesto que estos datos son confidencionales</p>
 
 
 ```python
@@ -176,7 +176,7 @@ cc_apps.head()
 
 
 ## 2. Analizando las solicitudes
-<p>El output puede parecer un poco confuso a primera vista, pero intentemos encontrar las variables más importantes de las solicitudes de tarjetas de crédito. Las variables han sido anonimizadas para proteger la privacidad, pero <a href="http://rstudio-pubs-static.s3.amazonaws.com/73039_9946de135c0a49daa7a0a9eda4a67a72.html">este blog</a> nos da una muy buena aproximación de las probables variables. Las probables variables en una solicitud de tarjeta de crédito son <code>Gender</code>, <code>Age</code>, <code>Debt</code>, <code>Married</code>, <code>BankCustomer</code>, <code>EducationLevel</code>, <code>Ethnicity</code>, <code>YearsEmployed</code>, <code>PriorDefault</code>, <code>Employed</code>, <code>CreditScore</code>, <code>DriversLicense</code>, <code>Citizen</code>, <code>ZipCode</code>, <code>Income</code> and finally the <code>ApprovalStatus</code>. Esto nos da un muy buen punto de inicio, y podemos podemos relacionar estas variables con respecto a las columnas en el output.   </p>
+<p>El output puede parecer un poco confuso a primera vista, pero intentemos encontrar las variables más importantes de las solicitudes de tarjetas de crédito. Las variables han sido anonimizadas para proteger la privacidad, pero <a href="http://rstudio-pubs-static.s3.amazonaws.com/73039_9946de135c0a49daa7a0a9eda4a67a72.html">este blog</a> nos da una muy buena aproximación de las probables variables. Las variables en una solicitud de tarjeta de crédito podrían ser <code>Gender</code>, <code>Age</code>, <code>Debt</code>, <code>Married</code>, <code>BankCustomer</code>, <code>EducationLevel</code>, <code>Ethnicity</code>, <code>YearsEmployed</code>, <code>PriorDefault</code>, <code>Employed</code>, <code>CreditScore</code>, <code>DriversLicense</code>, <code>Citizen</code>, <code>ZipCode</code>, <code>Income</code> y finalmente <code>ApprovalStatus</code>. Esto nos da un muy buen punto de inicio, y podemos podemos relacionar estas variables con respecto a las columnas en el output.   </p>
 <p> Como podemos ver desde nuestro primer vistazo a los datos, el conjunto de datos tiene una combinación de características numéricas y no numéricas. Esto se puede solucionar con algo de preprocesamiento, pero antes de hacerlo, aprendamos un poco más sobre el conjunto de datos para ver si hay otros problemas del conjunto de datos que deben corregirse.</p>
 
 
