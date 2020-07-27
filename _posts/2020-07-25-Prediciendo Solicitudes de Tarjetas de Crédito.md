@@ -1,7 +1,7 @@
 ---
 title: "Prediciendo Solicitudes de Tarjetas de Crédito"
 excerpt: "Construyendo un modelo de Aprendizaje Automático que prediga las aprobaciones de las solicitudes de las tarjetas de crédito"
-layout: posts
+layout: single
 header:
   overlay_image: "https://images.unsplash.com/photo-1430276084627-789fe55a6da0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80"
   overlay_filter: 0.4
