@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "Josue Guevara"
   avatar           : "images/Guevara_foto.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Estudiante de Economía Especializado en Data Engineering"
+  bio              : "Egresado de Economía Especializado en Data Engineering"
   location         : "Lima - Perú"
   email            : "josueguevara291@gmail.com"
   links:
